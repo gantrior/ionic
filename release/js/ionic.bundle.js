@@ -3012,6 +3012,11 @@ function tapMouseUp(e) {
     return false;
   }
 
+  if (e.button === 1 || e.button === 2) {
+      // ignore double/middle click
+      return false;
+  }
+
   if (tapIgnoreEvent(e) || isSelectOrOption(e.target.tagName)) return false;
 
   if (!tapHasPointerMoved(e)) {
